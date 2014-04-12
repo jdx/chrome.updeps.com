@@ -1,0 +1,20 @@
+{
+  "name": "chrome.updeps.com",
+  "version": "0.0.0",
+  "description": "The dependency wrangler.",
+  "repository": {
+    "type": "git",
+    "url": "github.com:dickeyxxx/chrome.updeps.com"
+  },
+  "author": "dickeyxxx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dickeyxxx/chrome.updeps.com/issues"
+  },
+  "homepage": "https://github.com/dickeyxxx/chrome.updeps.com",
+  "devDependencies": {
+    "bower": "^1.3.2",
+    "gulp": "^3.6.0",
+    "gulp-concat": "^2.2.0"
+  }
+}
