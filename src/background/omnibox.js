@@ -1,13 +1,26 @@
-app.service('omnibox', function(chrome) {
+app.service('omnibox', function(chrome, auth, $http) {
     function inputChanged(text, suggest) {
-        console.log('inputChanged: ', text);
-        suggest([{
-            content: text + ' one',
-            description: '<match>' + text + '</match>bar <dim>sslklj</dim> <url>https://github.com/dickeyxxx/updeps.com</url>'
-        }]);
+        chrome.omnibox.setDefaultSuggestion({
+            description: 'Search for <match>' + text + '</match> on updeps.com'
+        });
+        $http.get('http://updeps.dev/api/v1/search', {
+            params: {q: text, per_page: 5}
+        })
+        .success(function(repos) {
+            suggest(
+                repos.map(function(r) {
+                    description = r.full_name + ' <url>https://github.com/' + r.full_name + '</url> <dim>' + r.stargazers_count + ' stars</dim>'
+                    description = description.split(text).join('<match>' + text + '</match>');
+                    return {
+                        content: r.full_name,
+                        description: description
+                    }
+                })
+            );
+        });
     }
     function inputEntered(text) {
-        alert(text);
+        chrome.tabs.update({ "url": "https://github.com/" + text });
     }
     return {
         bootstrap: function() {

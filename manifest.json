@@ -24,10 +24,14 @@
   "omnibox": {
     "keyword": "up"
   },
+  "externally_connectable": {
+    "matches": ["*://updeps.dev/"]
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://github.com/"
+        "https://github.com/",
+        "http://updeps.dev/"
       ],
       "js": [
         "src/inject/inject.js"

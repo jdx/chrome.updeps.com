@@ -1,5 +1,8 @@
-var app = angular.module('app', []);
+var app = angular.module('app', [
+        'shared'
+]);
 
-app.run(function(omnibox) {
+app.run(function(omnibox, auth) {
     omnibox.bootstrap();
+    auth.bootstrap();
 });
