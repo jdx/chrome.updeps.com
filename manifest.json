@@ -18,9 +18,6 @@
     "default_title": "updeps",
     "default_popup": "src/browser_action/index.html"
   },
-  "permissions": [
-    "https://github.com/"
-  ],
   "omnibox": {
     "keyword": "up"
   },
@@ -30,11 +27,11 @@
   "content_scripts": [
     {
       "matches": [
-        "https://github.com/",
-        "http://updeps.dev/"
+        "https://github.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "bower_components/angular/angular.js",
+        "dist/inject.js"
       ]
     }
   ]

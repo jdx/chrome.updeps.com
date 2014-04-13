@@ -1,14 +1,9 @@
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
-        load();
-	}
-	}, 10);
-});
-
-function load() {
-    chrome.extension.sendMessage({
-        foo: 'bar'
-    });
-}
+(function() {
+    var repositoryMeta = document.querySelector('.repository-meta');
+    var template = "<div ng-cloak ng-app='updeps'>" +
+    "<div ng-controller='MetaController'>" +
+    '<h3>Latest version: {{version}}</h3>' +
+    '</div>' +
+    '</div>';
+    repositoryMeta.insertAdjacentHTML('afterend', template);
+})();
