@@ -3,7 +3,7 @@ app.service('omnibox', function(chrome, auth, $http) {
         chrome.omnibox.setDefaultSuggestion({
             description: 'Search for <match>' + text + '</match> on updeps.com'
         });
-        $http.get('http://updeps.dev/api/v1/search', {
+        $http.get('http://updeps.dev/api/v1/repositories/search', {
             params: {q: text, per_page: 5}
         })
         .success(function(repos) {
