@@ -10,13 +10,13 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "page": "src/background/index.html",
+    "page": "background.html",
     "persistent": true
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "updeps",
-    "default_popup": "src/browser_action/index.html"
+    "default_popup": "browser_action.html"
   },
   "omnibox": {
     "keyword": "up"
@@ -31,7 +31,8 @@
       ],
       "js": [
         "bower_components/angular/angular.js",
-        "dist/inject.js"
+        "shared.js",
+        "inject.js"
       ]
     }
   ]

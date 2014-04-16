@@ -1,6 +1,6 @@
-angular.module('up')
+angular.module('updeps')
 .service('GithubService', function($window) {
   return {
-    full_name: $window.document.title
+    fullName: $window.document.title
   };
 });

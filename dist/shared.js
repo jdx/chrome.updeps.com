@@ -1,3 +1,5 @@
+var shared = angular.module('shared', []);
+
 shared.service('AuthService', function(chrome, localStorage) {
     function messageReceived(req, sender, res) {
         localStorage.jwt = req.jwt;
@@ -20,4 +22,14 @@ shared.service('AuthService', function(chrome, localStorage) {
         isLoggedIn: isLoggedIn,
         jwt: jwt
     };
+});
+
+shared.factory('chrome', function($window) {
+    return $window.chrome;
+});
+
+shared.constant('localStorage', localStorage);
+
+shared.service('searchService', function(auth) {
+    console.log(auth.jwt());
 });

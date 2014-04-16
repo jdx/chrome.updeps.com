@@ -1,1 +1,3 @@
-angular.module('up', []);
+angular.module('updeps', [
+  'shared'
+]);

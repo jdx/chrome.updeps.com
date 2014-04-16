@@ -4,7 +4,7 @@ var gulp = require('gulp')
 var paths = ['src/shared/module.js', 'src/shared/**/*.js'];
 
 module.exports = function() {
-    gulp.src(paths)
+    return gulp.src(paths)
       .pipe(concat('shared.js'))
       .pipe(gulp.dest('./dist'));
 };

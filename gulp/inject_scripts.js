@@ -4,7 +4,7 @@ var gulp = require('gulp')
 var paths = ['src/inject/module.js', 'src/inject/**/*.js'];
 
 module.exports = function() {
-    gulp.src(paths)
+    return gulp.src(paths)
       .pipe(concat('inject.js'))
       .pipe(gulp.dest('./dist'));
 };

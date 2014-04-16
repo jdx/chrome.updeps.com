@@ -2,7 +2,7 @@ describe('GithubSvc', function() {
   var GithubService;
   var $window = {document: {title: 'dickeyxxx/updeps.com'}};
 
-  beforeEach(module('up', function($provide) {
+  beforeEach(module('updeps', function($provide) {
     $provide.value('$window', $window);
   }));
 
