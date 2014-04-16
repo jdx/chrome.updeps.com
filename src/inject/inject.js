@@ -5,5 +5,7 @@
     '<h3>Latest version: {{version}}</h3>' +
     '</div>' +
     '</div>';
-    repositoryMeta.insertAdjacentHTML('afterend', template);
+    if (repositoryMeta) {
+      repositoryMeta.insertAdjacentHTML('afterend', template);
+    }
 })();

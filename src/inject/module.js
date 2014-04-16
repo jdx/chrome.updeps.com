@@ -1,1 +1,1 @@
-var up = angular.module('updeps', []);
+angular.module('up', []);

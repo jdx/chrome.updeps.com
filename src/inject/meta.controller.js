@@ -1,6 +1,7 @@
-up.controller('MetaController', function($scope, $http, $window) {
-  var github = $window.document.title;
-  $http.get('http://updeps.dev/api/v1/repositories/' + github).success(function(repo) {
+var up = angular.module('up');
+
+up.controller('MetaCtrl', function($scope, $http, GithubService, UpdepsService) {
+  UpdepsService.getMetaInfo(GithubService.fullName).success(function(repo) {
     $scope.version = repo.version;
   });
 });
